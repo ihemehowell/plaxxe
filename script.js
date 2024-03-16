@@ -87,3 +87,33 @@ fetch('https://api.spotify.com/v1/me/playlists', {
 .catch(error => {
     console.error('Error fetching playlists:', error);
 });
+
+
+function performSearch(query) {
+    // Clear previous search results
+    document.getElementById('searchResults').innerHTML = '';
+
+    // Perform search action (e.g., make request to Spotify API)
+    // Replace this with your actual search logic
+    console.log('Performing search for:', query);
+    
+    // Display search results (for demonstration purposes)
+    const searchResultsDiv = document.getElementById('searchResults');
+    searchResultsDiv.innerHTML = `<p>Search results for: <strong>${query}</strong></p>`;
+}
+
+// Event listener for search button click
+document.getElementById('searchButton').addEventListener('click', function() {
+    const searchQuery = document.getElementById('searchInput').value.trim();
+    if (searchQuery !== '') {
+        performSearch(searchQuery);
+    }
+});
+
+// Event listener for pressing enter in search input field
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    const searchQuery = document.getElementById('searchInput').value.trim();
+    if (event.key === 'Enter' && searchQuery !== '') {
+        performSearch(searchQuery);
+    }
+});
