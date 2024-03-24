@@ -170,9 +170,27 @@ body {
     margin-top: 5px;
     margin-left: 5px;
     border-radius: 10px;
-    background-color: #050505 ;
+    background-color: #141414 ;
     margin-right: 8px;
-    
+    margin-bottom: 10px;
+   
+}
+.app-content{
+    overflow-y:scroll;
+    height: 75vh;
+}
+.app-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.app-content::-webkit-scrollbar-thumb {
+    background-color: #303131b9; /* Color of the scrollbar thumb */
+    border-radius: 2px; /* Rounded corners for the scrollbar thumb */
+}
+
+.app-content::-webkit-scrollbar-track{
+    background-color: transparent;
+
 }
 
 .app-header {
@@ -180,7 +198,7 @@ body {
     background: #020202;
     color: #fff;
     text-align: center;
-    border-radius: 5px;
+   
     
 }
 
@@ -200,6 +218,7 @@ body {
 .search-bar {
     display: flex;
     align-items: center;
+    margin-left: px;
 }
 
 .search-container {
@@ -225,15 +244,56 @@ body {
     right: 10px;
     transform: translateY(-50%);
     font-size: 24px;
-    color: #272525;
+    color: #1f1e1e;
     cursor: pointer;
 }
-.user-icon i {
-    font-size: 50px;
-    cursor: pointer;
-    margin-right: 3px;
-    color: #1a1a1a;
+.user-icon{
+    margin-right: 60px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #0e0e0e;
+   
 }
+
+.user-bell{
+  border-radius: 50%;
+ padding: 4px 4px;
+}
+.user-bell button{
+    background: #0f0f0f;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    
+}
+
+.user-bell button a{
+    color: #adacac;
+    
+}
+.user-bell span{
+    padding: 2px;
+    font-size: 20px;
+}
+.user-icon .user-btn button{
+    background: #b13f3f;
+    border: none;
+    padding: 2px 5px;
+    border-radius: 50%;
+    cursor: pointer; 
+    font-size: 75;
+}
+
+.user-icon .user-btn button a{
+    color: #282828;
+    text-decoration: none;
+    font-weight: 900;
+    
+}
+
+
 
 footer{position: fixed; width: 100%;}
 
@@ -241,14 +301,14 @@ footer{position: fixed; width: 100%;}
     --primary-color:#c9c4c4;
     --secondary-color:#999;
     --green-color:#2d5;
-    --padding: 15px;
+    --padding: 10px;
     background: #0f0f0f;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 
-    height: 3.5rem;
+    height: 5.4rem;
     padding: var(--padding);
     color: var(--primary-color);
     cursor: pointer;
@@ -408,22 +468,33 @@ i:hover{
 
 .section h2 {
     font-size: 24px;
-    color: #000;
+    color: #ffffff;
     margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.section h2:hover{
+    text-decoration: underline;
 }
 
 .playlist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-gap: 50px;
 }
 
 .playlist-item {
-    background-color: #fff;
-    border-radius: 5px;
+    position: relative; /* Required for absolute positioning of icons */
+    background-color: transparent;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    padding: 15px;
+}
+
+.playlist-item:hover{
+    background: #1f1f1f56;
 }
 
 .playlist-item:hover {
@@ -437,9 +508,35 @@ i:hover{
 }
 
 .playlist-item h3 {
-    padding: 10px;
+    margin-top: -4px;
+    padding: 6px;
     font-size: 16px;
-    color: #000;
+    color: #b3b3b3;
+}
+
+.playlist-item p{
+    margin-top: -20px;
+    color: #615f5f;
+}
+
+/* Play button icon styles */
+.playlist-item .bx-play {
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    
+    padding: 5px 5px;
+    border-radius: 50%;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+    background: #1DB954;
+}
+
+.playlist-item:hover .bx-play {
+    opacity: 1; /* Show on hover */
+    
 }
 
 
